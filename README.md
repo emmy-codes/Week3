@@ -1,1 +1,7 @@
-This is a todo list project.
+# Todo list app conversion from JSX to TS
+
+# Contributors
+
+Faustina
+Gloria
+Emma
