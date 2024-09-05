@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent } from 'react';
+import { useState, MouseEvent } from 'react';
 import { useDispatch } from "react-redux";
 import { addTask } from "../redux/tasks";
 
@@ -6,12 +6,6 @@ export const AddTask = () => {
     const [value, setValue] = useState<string>('')
 
     const dispatch = useDispatch();
-
-    type addTaskTypes = {
-        task: string;
-        completed: boolean;
-    }
-
 
     const onSubmit = (event: MouseEvent) => {
         event.preventDefault();
@@ -22,7 +16,13 @@ export const AddTask = () => {
             return;
         }
 
-        dispatch(
+        dispatch<{
+            payload: {
+                task: string;
+                completed: boolean;
+            };
+            type: "tasks/addTask";
+        }>(
             addTask({
                 task: value,
                 completed: false,
