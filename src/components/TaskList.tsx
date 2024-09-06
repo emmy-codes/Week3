@@ -1,11 +1,13 @@
-import { useSelector } from 'react-redux';
-import { useDispatch } from "react-redux";
-import { TaskItem } from "../components/TaskItem"
-import { deleteTask } from "../redux/tasks"
+import { useSelector, useDispatch } from 'react-redux';
+import { TaskItem } from "../components/TaskItem";
+import { deleteTask } from "../redux/tasks";
+import {Task} from "../redux/tasks";
+
 
 export const TaskList = () => {
-    const tasks = useSelector((state) => state.tasks);
-
+    // Use Redux's useSelector hook to get the current state of the tasks array.
+    const tasks = useSelector((state: { tasks: Task[] }) => state.tasks);
+    
     const dispatch = useDispatch();
 
     const handleClick = (id) => {

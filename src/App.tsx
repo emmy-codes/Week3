@@ -10,7 +10,6 @@ const reducer = combineReducers({
 
 const store = configureStore({ reducer });
 
-export type RootState = ReturnType<typeof store.getState>;
 
 export const App = () => {
   return (
