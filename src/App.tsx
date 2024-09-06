@@ -1,15 +1,15 @@
-import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { tasks } from './redux/tasks'
-
-import { TaskList } from './components/TaskList'
-import { AddTask } from './components/AddTask'
+import { Provider } from 'react-redux';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { tasks } from './redux/tasks';
+import { TaskList } from './components/TaskList';
+import { AddTask } from './components/AddTask';
 
 const reducer = combineReducers({
-  tasks: tasks.reducer
+  tasks: tasks.reducer,
 })
 
-const store = configureStore({ reducer })
+const store = configureStore({ reducer });
+
 
 export const App = () => {
   return (
@@ -20,5 +20,5 @@ export const App = () => {
         <TaskList />
       </div>
     </Provider>
-  )
+  );
 };
