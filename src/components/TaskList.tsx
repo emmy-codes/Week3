@@ -10,18 +10,23 @@ export const TaskList = () => {
     
     const dispatch = useDispatch();
 
-    const handleClick = (id) => {
+    const handleClick = (id: number) => {
         dispatch(
-			deleteTask({
-				id: id
-			})
-		)
-    }
+           deleteTask({
+                id,
+            })
+        );
+    };
 
     return (
         <ul className="task-list">
-            {tasks.map((task) => (
-                <TaskItem key={task.id} text={task.text} id={task.id} onClick={(id) => handleClick(id)}/>
+            {tasks.map((task: Task) => (
+                <TaskItem
+                 key={task.id} 
+                 text={task.text} 
+                 id={task.id} 
+                 onClick={handleClick}
+                 />
             ))}
         </ul>
     );
